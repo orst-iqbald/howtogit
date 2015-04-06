@@ -1,0 +1,118 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand">REST Countries API</a>
+          <div class="nav-collapse collapse">
+
+            <ul class="nav">
+              <li class="active"><a href="howtoindex.html">Introduction</a></li>
+              <li><a href="single.html">Single Attributes</a></li>
+              <li><a href="multiple.html">Multiple Attributes</a></li>
+              <li><a href="filters.html">Filters and Selectors</a></li>
+              <li><a href="attributes.html">All Attributes </a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <h1>Multiple Attributes</h1>
+      <p>By now we've looked at how to get single attributes. This section will look into multiple attributes. Borders, for example fill this criteria. </p>
+
+      <h2> Good News! </h2>
+      <p> Good news is that you've done most of the work in term of creating the XML object and we will use this as a foundation for obtaining multiple objects.
+      <p> You can get the whole list of multiple objects in one attribute by treating it as a single attribute. The below gives all the borders of a country </p>
+      <p>
+      ie responseObject[i]['borders']
+      </p>
+
+      <h2> Specificity </h2>
+      <p> However, if you want a specific border, you will need to specify which one with the syntax below</p>
+      <p> responseObject[i]['borders'][0]</p>
+      <p> This will give you the first border of each country if there is one. If not, you'll get an undefined object. You can make a conditional statement to only give you countries with more than X number of border. </p>
+      <p> use responseObject[i]['borders'].length to specify the delimter </p>
+      <br>
+      <p>
+      Below you'll see the outline of a guessing game which requires you to guess the country based on its borders. I haven't completed it, but that's for you to do!
+
+      It's very simple to complete, just put a conditional so that when the button is clicked if the guess is equal to the borders then you get a response!
+      </p>
+
+
+      <form>
+      <button onclick = countryguess() > Guess Country </button>
+
+      <div id="myList">Select the Country </div>
+      Borders: <div id="myList1"></div>
+      Guess Answer: <div id="myList2"> </div>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src ="todo.js"></script>
+    <script type="text/javasript"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>

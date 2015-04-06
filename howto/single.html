@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand">REST Countries API</a>
+          <div class="nav-collapse collapse">
+
+            <ul class="nav">
+              <li class="active"><a href="howtoindex.html">Introduction</a></li>
+              <li><a href="single.html">Single Attributes</a></li>
+              <li><a href="multiple.html">Multiple Attributes</a></li>
+              <li><a href="filters.html">Filters and Selectors</a></li>
+              <li><a href="attributes.html">All Attributes </a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <p>
+    To get single attributes you need to parse the JSON string. Let's take a look at what this looks like.
+    </p>
+    <p>
+    Attributes listed here include country name, capital, alternative spellings, relavance, region, etc
+    </p>
+    <p>
+
+    </p>
+    <p>
+    You an see that name, capital, and relevance are followed by only one attribute, whereas alternative spellings (altSpellings) has 2. In this section, we will focus on just getting those single attributes. You can learn how to get multiple attributes in the next section
+    </p>
+    <p>
+    <h3> 1. Create a reqeust object </h3>
+    </p>
+    <p>
+        <b> var xhr = new XMLHttpRequest(); </b>
+    </p>
+    <p>
+        This request object can have the methods open and send enacted upon it. These methods allow data transfer between your website and the server.
+    </p>
+    <p>
+    <h3> 2. Enact JSON parsing on your XML object once page has loaded </h3>
+    <p>
+       <p>
+       <b> xhr.onload = function(); </b>
+       <b> responseObject = JSON.parse(xhr.responseText); </b>
+       </p>
+       <p>
+       The onload method ensures that whatever is inside your function will be enacted once the page has loaded.
+       </p>
+       <p>
+       This calls the responseText method on your object, which converts the data in the object into a text. This text has to be parsed into value for the JSON array.
+       </p>
+       <p>
+       The variable responseObject stores this data.
+       </p>
+    </p>
+      <p>
+    <h3> 3. Enact the get and open method on your XML object </h3>
+       </p>
+       <p>
+      xhr.open('GET', 'http://restcountries.eu/rest/v1/all', true);
+      xhr.send();
+       </p>
+       <p>
+       The first statement gets the data from your requested url and the second sends it to the server
+       </p>
+       <p>
+    <h3> 4. Create content</h3>
+       </p>
+       <p>
+      var newContent = responseObject[i]["**attribute name**"]
+      </p>
+      <p>
+      ie responseObject[i]['name']
+      </p>
+      <p>
+      The JSON content is delivered in array format. Each index of the array contains information about that country. To derive informaiton about that country's name, you have to specify what you want after the iterator -- in this case name ([i][name])
+      </p>
+      <p>
+    <h3> 5. Stable content onto page </h3>
+      </p>
+      <p>
+      document.getElementById('content').innerHTML = newContent;
+      </p>
+      <p>
+      This finds the content id (getElementById) on the document html(innerHtML) object and replaces it with the variable you created
+      </p>
+
+    </div> <!-- /container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src ="todo.js"></script>
+    <script type="text/javasript"></script>
+
+  </body>
+</html>
